@@ -1,0 +1,16 @@
+{
+  "name": "Qualitas Engineering Asia",
+  "short_name": "Qualitas",
+  "description": "Technical governance, quality assurance and commissioning support.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07151a",
+  "theme_color": "#07151a",
+  "icons": [
+    {
+      "src": "/assets/favicon.png",
+      "sizes": "1200x1200",
+      "type": "image/png"
+    }
+  ]
+}
