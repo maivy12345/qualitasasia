@@ -68,7 +68,7 @@ if ('IntersectionObserver' in window) {
 }
 
 document.querySelectorAll('[data-copy-company]').forEach(button => button.addEventListener('click', async () => {
-  const value = 'Qualitas Engineering Asia | Hong Kong | BR / Company No. 74786274 | qualitasasia.com';
+  const value = "Qualitas Engineering Asia | Email: support@qualitasasia.com | Hotline: +852 3956 3968 | Office: Unit 1411, 14/F, COSCO Tower, 183 Queen's Road Central, Sheung Wan, Hong Kong | BR / Company No. 74786274 | qualitasasia.com";
   const status = button.parentElement.querySelector('.copy-status');
   try {
     await navigator.clipboard.writeText(value);
