@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://qualitasasia.com/</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://qualitasasia.com/services/</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://qualitasasia.com/services/technical-governance/</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://qualitasasia.com/services/quality-assurance/</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://qualitasasia.com/services/commissioning/</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://qualitasasia.com/services/operational-readiness/</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://qualitasasia.com/sectors/</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://qualitasasia.com/approach/</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://qualitasasia.com/about/</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://qualitasasia.com/insights/</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://qualitasasia.com/insights/why-independent-commissioning/</loc><lastmod>2026-09-29</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://qualitasasia.com/contact/</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://qualitasasia.com/</loc><lastmod>2026-10-08</lastmod><priority>1.0</priority></url>
+  <url><loc>https://qualitasasia.com/about/</loc><lastmod>2026-10-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://qualitasasia.com/services/</loc><lastmod>2026-10-08</lastmod><priority>0.9</priority></url>
+  <url><loc>https://qualitasasia.com/services/quality-management-frameworks-itps/</loc><lastmod>2026-10-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://qualitasasia.com/services/technical-compliance-review-desktop-audit/</loc><lastmod>2026-10-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://qualitasasia.com/services/non-conformance-corrective-action/</loc><lastmod>2026-10-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://qualitasasia.com/services/commissioning-handover-dossier-governance/</loc><lastmod>2026-10-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://qualitasasia.com/services/esg-monitoring-reporting-frameworks/</loc><lastmod>2026-10-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://qualitasasia.com/approach/</loc><lastmod>2026-10-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://qualitasasia.com/sectors/</loc><lastmod>2026-10-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://qualitasasia.com/insights/</loc><lastmod>2026-10-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://qualitasasia.com/insights/quality-is-planned-not-inspected-the-case-for-itps/</loc><lastmod>2026-10-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://qualitasasia.com/insights/desktop-compliance-review-independence-without-the-site-visit/</loc><lastmod>2026-10-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://qualitasasia.com/insights/non-conformances-are-a-sign-of-a-healthy-system-not-a-failure/</loc><lastmod>2026-10-08</lastmod><priority>0.7</priority></url>
+  <url><loc>https://qualitasasia.com/how-we-work/</loc><lastmod>2026-10-08</lastmod><priority>0.6</priority></url>
+  <url><loc>https://qualitasasia.com/faq/</loc><lastmod>2026-10-08</lastmod><priority>0.6</priority></url>
+  <url><loc>https://qualitasasia.com/careers/</loc><lastmod>2026-10-08</lastmod><priority>0.6</priority></url>
+  <url><loc>https://qualitasasia.com/contact/</loc><lastmod>2026-10-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://qualitasasia.com/privacy/</loc><lastmod>2026-10-08</lastmod><priority>0.3</priority></url>
+  <url><loc>https://qualitasasia.com/terms/</loc><lastmod>2026-10-08</lastmod><priority>0.3</priority></url>
+  <url><loc>https://qualitasasia.com/cookies/</loc><lastmod>2026-10-08</lastmod><priority>0.3</priority></url>
+  <url><loc>https://qualitasasia.com/disclaimer/</loc><lastmod>2026-10-08</lastmod><priority>0.3</priority></url>
 </urlset>

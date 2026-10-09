@@ -2,27 +2,41 @@
 
 ## Primary navigation
 
-1. Services
-2. Sectors
+1. About
+2. Services
 3. Approach
-4. About
+4. Sectors
 5. Insights
-6. Discuss a project
+6. Careers
+7. Contact
+
+## Services
+
+1. Quality Management Frameworks and ITPs
+2. Technical Compliance Review and Desktop Audit
+3. Non Conformance and Corrective Action
+4. Commissioning and Handover Dossier Governance
+5. ESG Monitoring and Reporting Frameworks
+
+## Supporting pages
+
+- How we work
+- Frequently asked questions
+- Privacy Policy
+- Terms of Use
+- Cookie Notice
+- Disclaimer
+- Custom 404 page
 
 ## Conversion paths
 
-- Visitor with a defined service need: Home → Services → Specialist service → Contact.
-- Visitor evaluating sector relevance: Home → Sectors → Relevant systems → Contact.
-- Visitor assessing credibility: Home → Approach → About → Contact.
-- Research-led visitor: Insight → Related service → Contact.
+- Defined service need: Home to Services to Service Detail to Contact.
+- Sector fit: Home to Sectors to Contact.
+- Credibility review: Home to About or Approach to Contact.
+- Research visitor: Insight to Related Service to Contact.
 
-## Service architecture
+## Content controls
 
-- Technical governance: requirements, decision rights, interfaces, change and technical risk.
-- Quality assurance: planning, supplier quality, installation surveillance, non-conformance and turnover records.
-- Commissioning and verification: strategy, commissionability, test documentation, witnessing and integrated systems testing.
-- Operational readiness: information, procedures, training, transition controls and go-live evidence.
-
-## Evidence strategy
-
-The current site demonstrates credibility through a clear methodology, concrete deliverables, lifecycle coverage and transparent company registration details. Add only verified project references, client testimonials, professional credentials and team biographies.
+- Do not publish invented clients, projects, statistics, team profiles or vacancies.
+- Keep claims grounded in the approved scope: desktop assurance is distinct from statutory site supervision.
+- Use sentence case and International English.

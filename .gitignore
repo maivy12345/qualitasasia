@@ -1,0 +1,8 @@
+# Local QA and document-review artifacts
+artifacts/
+.tmp-docx-review/
+
+# OS/editor-generated files
+.DS_Store
+Thumbs.db
+

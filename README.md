@@ -1,49 +1,36 @@
-# Qualitas Engineering Asia — Multi-page website source
+# Qualitas Engineering Asia website
 
-Static, production-ready source for the English-language Qualitas Engineering Asia website.
+Static, responsive website source aligned to the Qualitas brand and website guideline.
+
+## Brand system
+
+- Manrope for headings and buttons.
+- Spline Sans for body copy.
+- Forest green `#0B6B43`, deep green `#063B28`, accent `#128252`, black `#050806`, light green `#CAEAD8`, background `#F1F8F4`.
+- Maximum content width of 1200px with mobile, tablet and desktop layouts.
 
 ## Site structure
 
+- Home, About, Services, Approach, Sectors, Insights, Careers and Contact.
+- Five detailed service pages matching the approved service architecture.
+- Working-with-Qualitas guidance and a comprehensive FAQ.
+- Privacy, Terms, Cookie Notice and Disclaimer pages.
+- Three published insight articles and an editorial library of planned topics.
+- Legacy service URLs redirect to the current service architecture.
+
+## Local preview
+
+Serve this directory from a local web server so absolute paths resolve correctly:
+
 ```text
-/
-├── about/
-├── approach/
-├── contact/
-├── sectors/
-├── services/
-│   ├── technical-governance/
-│   ├── quality-assurance/
-│   ├── commissioning/
-│   └── operational-readiness/
-├── insights/
-│   └── why-independent-commissioning/
-├── assets/
-│   ├── styles.css
-│   ├── site.js
-│   └── brand and hero images
-├── 404.html
-├── robots.txt
-├── sitemap.xml
-└── site.webmanifest
+node server.mjs
 ```
 
-## Included
+Then open `http://127.0.0.1:4173/`.
 
-- 12 indexable URLs with unique titles, descriptions and canonical URLs.
-- Semantic navigation, breadcrumbs and accessible page structure.
-- Organization structured data in JSON-LD.
-- Responsive desktop and mobile layouts.
-- Dedicated service pages with scope, outputs and engagement triggers.
-- Sector, methodology, company, insight and contact content.
-- XML sitemap, robots rules, manifest and custom 404 page.
-- A client-side project brief builder that copies information locally and does not transmit data.
+## Deployment notes
 
-## Deployment
-
-Upload the contents of this folder to the public web root for `qualitasasia.com`. No build step, database or server-side runtime is required.
-
-All URLs use directory-based `index.html` files, so the hosting platform should enable standard directory index resolution.
-
-## Content still requiring verified company data
-
-Add verified email and telephone details when available. Project names, client logos, team profiles, accreditations and performance statistics were intentionally not invented and should only be added from approved source material.
+- The contact form prepares an email in the visitor's email application. Connect it to an approved form backend before production if server-side submission, storage, spam filtering or automated replies are required.
+- Add GA4 and Search Console identifiers only after the accounts and consent configuration are approved.
+- Privacy and legal copy should receive final legal review before go-live.
+- Publish only verified team profiles, projects, statistics and job openings.
