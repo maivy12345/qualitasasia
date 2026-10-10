@@ -60,27 +60,156 @@ if ('IntersectionObserver' in window) {
   revealItems.forEach(element => element.classList.add('visible'));
 }
 
+const sharedFooter = `
+  <div class="shell">
+    <div class="footer-grid">
+      <div>
+        <img class="footer-logo" src="/assets/qualitas-footer-logo.svg" alt="Qualitas Engineering Asia">
+        <p class="footer-intro">Technical governance, quality assurance and commissioning support.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Services</h3>
+        <a href="/services/quality-management-frameworks-itps/">Quality frameworks &amp; ITPs</a>
+        <a href="/services/technical-compliance-review-desktop-audit/">Compliance review</a>
+        <a href="/services/non-conformance-corrective-action/">NCR &amp; corrective action</a>
+        <a href="/services/commissioning-handover-dossier-governance/">Handover governance</a>
+        <a href="/services/esg-monitoring-reporting-frameworks/">ESG reporting</a>
+      </div>
+      <div class="footer-col">
+        <h3>Company</h3>
+        <a href="/about/">About</a>
+        <a href="/approach/">Approach</a>
+        <a href="/how-we-work/">How we work</a>
+        <a href="/sectors/">Sectors</a>
+        <a href="/insights/">Insights</a>
+        <a href="/faq/">FAQ</a>
+        <a href="/careers/">Careers</a>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <a href="mailto:contact@qualitasasia.com">contact@qualitasasia.com</a>
+        <address class="footer-address">7A/F, Wing Hing Commercial Building<br>139 Wing Lok St, Sheung Wan<br>Hong Kong</address>
+        <span class="footer-address">BR / Company No. 74786274</span>
+      </div>
+    </div>
+    <div class="footer-base">
+      <span>© 2026 Qualitas Engineering Asia Limited</span>
+      <nav class="footer-legal" aria-label="Legal">
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+        <a href="/cookies/">Cookies</a>
+        <a href="/disclaimer/">Disclaimer</a>
+      </nav>
+    </div>
+  </div>`;
+
+document.querySelectorAll('.site-footer').forEach(footer => {
+  footer.innerHTML = sharedFooter;
+});
+
 document.querySelectorAll('[data-year]').forEach(element => {
   element.textContent = new Date().getFullYear();
 });
 
+if (['/privacy/', '/terms/', '/cookies/', '/disclaimer/'].includes(location.pathname)) {
+  document.querySelector('.article-body')?.insertAdjacentHTML('afterbegin', '<p class="legal-updated">Last updated: <time datetime="2026-10-08">8 October 2026</time></p>');
+}
+
 const form = document.querySelector('[data-contact-form]');
-form?.addEventListener('submit', event => {
+const formStartedAt = form?.querySelector('[name="formStartedAt"]');
+const submissionIdField = form?.querySelector('[name="submissionId"]');
+if (formStartedAt) formStartedAt.value = String(Date.now());
+
+form?.addEventListener('submit', async event => {
   event.preventDefault();
   const status = form.querySelector('.form-status');
+  const submitButton = form.querySelector('button[type="submit"]');
   if (!form.reportValidity()) return;
-  const data = new FormData(form);
-  const subject = encodeURIComponent(`Website enquiry — ${data.get('name')}, ${data.get('company') || 'No company'}`);
-  const body = encodeURIComponent([
-    `Name: ${data.get('name')}`,
-    `Company: ${data.get('company') || 'Not provided'}`,
-    `Email: ${data.get('email')}`,
-    `Phone: ${data.get('phone') || 'Not provided'}`,
-    '',
-    data.get('message')
-  ].join('\n'));
-  if (status) status.textContent = 'Your email application is opening with the enquiry prepared. Review it before sending.';
-  window.location.href = `mailto:contact@qualitasasia.com?subject=${subject}&body=${body}`;
+
+  const data = Object.fromEntries(new FormData(form).entries());
+  if (submissionIdField && !submissionIdField.value) {
+    submissionIdField.value = globalThis.crypto?.randomUUID?.() || `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+  }
+  data.submissionId = submissionIdField?.value;
+
+  if (submitButton) {
+    submitButton.disabled = true;
+    submitButton.dataset.label = submitButton.textContent;
+    submitButton.textContent = 'Sending…';
+  }
+  if (status) {
+    status.className = 'form-status';
+    status.textContent = 'Sending your enquiry…';
+  }
+
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(result.message || 'We could not send your enquiry.');
+
+    form.reset();
+    if (formStartedAt) formStartedAt.value = String(Date.now());
+    if (status) {
+      status.classList.add('is-success');
+      status.textContent = 'Thank you. Your enquiry has been sent and a confirmation email is on its way.';
+    }
+  } catch (error) {
+    if (status) {
+      status.classList.add('is-error');
+      status.textContent = `${error.message} Please try again or email contact@qualitasasia.com.`;
+    }
+  } finally {
+    if (submitButton) {
+      submitButton.disabled = false;
+      submitButton.textContent = submitButton.dataset.label || 'Send enquiry';
+    }
+  }
+});
+
+const insightFilters = document.querySelector('[data-insight-filters]');
+if (insightFilters) {
+  const cards = [...document.querySelectorAll('[data-insight-topic]')];
+  const emptyState = document.querySelector('[data-insight-empty]');
+  insightFilters.addEventListener('click', event => {
+    const button = event.target.closest('button[data-filter]');
+    if (!button) return;
+    const filter = button.dataset.filter;
+    insightFilters.querySelectorAll('button').forEach(item => {
+      const selected = item === button;
+      item.classList.toggle('active', selected);
+      item.setAttribute('aria-pressed', String(selected));
+    });
+    let visible = 0;
+    cards.forEach(card => {
+      const show = filter === 'all' || card.dataset.insightTopic === filter;
+      card.hidden = !show;
+      if (show) visible += 1;
+    });
+    if (emptyState) emptyState.hidden = visible > 0;
+  });
+}
+
+document.querySelectorAll('[data-share]').forEach(link => {
+  const network = link.dataset.share;
+  const url = encodeURIComponent(location.href);
+  const title = encodeURIComponent(document.title);
+  if (network === 'linkedin') link.href = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+  if (network === 'email') link.href = `mailto:?subject=${title}&body=${url}`;
+});
+
+document.querySelector('[data-copy-link]')?.addEventListener('click', async event => {
+  const button = event.currentTarget;
+  try {
+    await navigator.clipboard.writeText(location.href);
+    button.textContent = 'Link copied';
+  } catch {
+    button.textContent = 'Copy failed';
+  }
+  window.setTimeout(() => { button.textContent = 'Copy link'; }, 1800);
 });
 
 if (!document.querySelector('[data-cookie-banner]')) {

@@ -1,6 +1,6 @@
 # Qualitas Engineering Asia website
 
-Static, responsive website source aligned to the Qualitas brand and website guideline.
+Responsive website source with static HTML pages and a lightweight Node enquiry API, aligned to the Qualitas brand and website guideline.
 
 ## Brand system
 
@@ -20,17 +20,23 @@ Static, responsive website source aligned to the Qualitas brand and website guid
 
 ## Local preview
 
-Serve this directory from a local web server so absolute paths resolve correctly:
+Set the transactional email variables, then serve this directory so absolute paths and the enquiry API resolve correctly:
 
 ```text
+$env:RESEND_API_KEY="re_..."
+$env:ENQUIRY_FROM_EMAIL="Qualitas website <enquiries@your-verified-domain.com>"
+$env:ENQUIRY_TO_EMAIL="contact@qualitasasia.com"
 node server.mjs
 ```
 
 Then open `http://127.0.0.1:4173/`.
 
+The contact endpoint sends the internal enquiry and visitor auto-reply together through Resend's batch API. It rejects oversized or invalid payloads, rate-limits repeated attempts and includes a honeypot and minimum completion time. The sending domain must be verified by the email provider before production use.
+Set `TRUST_PROXY=1` only when the app is behind a trusted reverse proxy that overwrites `X-Forwarded-For`.
+
 ## Deployment notes
 
-- The contact form prepares an email in the visitor's email application. Connect it to an approved form backend before production if server-side submission, storage, spam filtering or automated replies are required.
+- Configure `RESEND_API_KEY` and a verified `ENQUIRY_FROM_EMAIL` before production. The form reports a delivery error when email is not configured or the provider rejects the request.
 - Add GA4 and Search Console identifiers only after the accounts and consent configuration are approved.
 - Privacy and legal copy should receive final legal review before go-live.
 - Publish only verified team profiles, projects, statistics and job openings.
