@@ -35,6 +35,16 @@ const contentTypes = {
   ".xml": "application/xml; charset=utf-8",
 };
 
+const cacheableImageExtensions = new Set([
+  ".gif",
+  ".ico",
+  ".jpeg",
+  ".jpg",
+  ".png",
+  ".svg",
+  ".webp",
+]);
+
 async function resolveFile(urlPath) {
   const decodedPath = decodeURIComponent(urlPath.split("?")[0]);
   const relativePath = normalize(decodedPath).replace(/^([/\\])+/, "");
@@ -229,9 +239,12 @@ const server = createServer(async (request, response) => {
       return;
     }
 
+    const extension = extname(filePath).toLowerCase();
     response.writeHead(200, {
-      "Cache-Control": "no-cache",
-      "Content-Type": contentTypes[extname(filePath).toLowerCase()] ?? "application/octet-stream",
+      "Cache-Control": cacheableImageExtensions.has(extension)
+        ? "public, max-age=604800, stale-while-revalidate=86400"
+        : "no-cache",
+      "Content-Type": contentTypes[extension] ?? "application/octet-stream",
     });
     createReadStream(filePath).pipe(response);
   } catch (error) {

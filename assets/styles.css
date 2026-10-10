@@ -153,19 +153,19 @@ li + li { margin-top: 0.5em; }
   background-position: center; background-size: cover; background-repeat: no-repeat;
   opacity: 1;
 }
-.page-hero.hero-field::before { background-image: url('/assets/field-assurance.jpg'); background-position: 58% center; }
-.page-hero.hero-infrastructure::before { background-image: url('/assets/infrastructure-systems.jpg'); background-position: center; }
-.page-hero.hero-services::before { background-image: url('/assets/technical-review.jpg'); background-position: center; }
-.page-hero.hero-approach::before { background-image: url('/assets/approach-workflow.jpg'); background-position: center; }
-.page-hero.hero-insights::before { background-image: url('/assets/insights-editorial.jpg'); background-position: center; }
-.page-hero.hero-how::before { background-image: url('/assets/commissioning-hero-v2.png'); background-position: center; }
-.page-hero.hero-careers::before { background-image: url('/assets/careers-team.jpg'); background-position: 52% center; }
-.page-hero.hero-contact::before { background-image: url('/assets/contact-hong-kong.jpg'); background-position: 54% center; }
-.page-hero.hero-service-quality::before { background-image: url('/assets/service-quality-frameworks.jpg'); background-position: center; }
-.page-hero.hero-service-compliance::before { background-image: url('/assets/service-compliance-review.jpg'); background-position: center; }
-.page-hero.hero-service-ncr::before { background-image: url('/assets/service-ncr.jpg'); background-position: center; }
-.page-hero.hero-service-handover::before { background-image: url('/assets/service-handover.jpg'); background-position: center; }
-.page-hero.hero-service-esg::before { background-image: url('/assets/service-esg.jpg'); background-position: center; }
+.page-hero.hero-field::before { background-image: url('/assets/field-assurance.webp'); background-position: 58% center; }
+.page-hero.hero-infrastructure::before { background-image: url('/assets/infrastructure-systems.webp'); background-position: center; }
+.page-hero.hero-services::before { background-image: url('/assets/technical-review.webp'); background-position: center; }
+.page-hero.hero-approach::before { background-image: url('/assets/approach-workflow.webp'); background-position: center; }
+.page-hero.hero-insights::before { background-image: url('/assets/insights-editorial.webp'); background-position: center; }
+.page-hero.hero-how::before { background-image: url('/assets/commissioning-hero-v2.webp'); background-position: center; }
+.page-hero.hero-careers::before { background-image: url('/assets/careers-team.webp'); background-position: 52% center; }
+.page-hero.hero-contact::before { background-image: url('/assets/contact-hong-kong.webp'); background-position: 54% center; }
+.page-hero.hero-service-quality::before { background-image: url('/assets/service-quality-frameworks.webp'); background-position: center; }
+.page-hero.hero-service-compliance::before { background-image: url('/assets/service-compliance-review.webp'); background-position: center; }
+.page-hero.hero-service-ncr::before { background-image: url('/assets/service-ncr.webp'); background-position: center; }
+.page-hero.hero-service-handover::before { background-image: url('/assets/service-handover.webp'); background-position: center; }
+.page-hero.hero-service-esg::before { background-image: url('/assets/service-esg.webp'); background-position: center; }
 .page-hero::after {
   content: ''; position: absolute; z-index: -1; inset: 0;
   background:
